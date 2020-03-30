@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src ="code.js"></script>
+	<title>FORM</title>
+</head>
+<body>
+	<header>
+		<div>
+			<p>Покупайте телефоны у нас!</p>
+		  <p class="comp">(Компания по продаже телефонов)</p>
+		</div>
+	</header>
+
+	<div class="flex">
+		<article id="app">
+			<div class="div_form">
+				<p>Оставьте Ваше мнение о нашем сервисе:</p>
+
+				<form name="myForm" class="form" id="form" onsubmit="return false;">
+					<fieldset>
+						<legend>Расскажите немного о себе: </legend>
+
+						<p>
+							<label for="name">Как Вас зовут? <em>*</em></label>
+							<input
+								 class="name"
+							   id="name"
+							   type="text"
+							   name="name"
+							   pattern=[A-Za-zА-Яа-яЁё]+(\s+[A-Za-zА-Яа-яЁё]+)?
+							   required
+							   />
+						</p>
+
+						<hr>
+
+						<p>
+							<label for="age">Ваш возраст?</label>
+							<input
+								 id="age"
+								 type="number"
+								 name="age"
+								 min="18"
+								 value = "18"
+								 />
+						</p>
+
+						<hr>
+
+						<label for="gender">Ваш пол?</label>
+						<select size="1" id="gender">
+							<option value="женщина">Женщина</option>
+							<option value="мужчина">Мужчина</option>
+						</select>
+
+						<hr>
+
+						<p>
+							<label for="date">Дата заполнения формы? </label>
+							<input id="date" type="date" name="date_form" min="2019-10-01" max="2019-12-11">
+						</p>
+					</fieldset>
+
+					<fieldset>
+						<legend>Расскажите о Ваших предпочтениях: </legend>
+
+						<p>
+							<label>Выберите ОС:</label>
+
+							<input
+									type="radio"
+								  class="radio"
+								  id="R1"
+								  value="Android"
+								  name="contact"/>
+							<label for="R1">Android</label>
+
+							<input
+									type="radio"
+									class="radio"
+									id="R2"
+									value="iOS"
+									name="contact"
+									checked/>
+							<label for="R2">iOS</label>
+
+							<input
+									type="radio"
+									class="radio"
+									id="R3"
+									value="Windows"
+									name="contact"
+									checked/>
+							<label for="R3">Windows Phone</label>
+						</p>
+
+						<hr>
+
+						<p>
+							<label>Объём памяти: </label>
+
+							<select name="select-choice" id="select-choice">
+								<option id="c1" value="32GB">32GB</option>
+								<option id="c2" value="64GB">64GB</option>
+								<option id="c3" value="128GB">128GB</option>
+							</select>
+						</p>
+
+						<hr>
+
+						<p>
+							<label for="textarea">Ваши пожелания:</label>
+							<textarea id="textarea" name="textarea" cols="30" rows="3"></textarea>
+						</p>
+
+						<hr>
+
+						<p>
+							<label for="select-choice2">Оцените наш сервис: </label>
+							<select name="select-choice2" id="select-choice2">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+						</p>
+					</fieldset>
+
+					<div class="but">
+						<button class="butt btn_submit" id="myBtn" onclick="sbmt();">
+							Отправить
+						</button>
+						<button type="reset" class="butt">
+							Очистить
+						</button>
+					</div>
+
+
+				 <!-- <div class="res_table">
+          <table id="results">
+            <tr>
+              <td>Имя</td>
+              <td>Возраст</td>
+              <td>Пол</td>
+              <td>Дата заполнения</td>
+              <td>ОС</td>
+              <td>Объём памяти</td>
+              <td>Комментарии</td>
+              <td>Оценка сервиса</td>
+            </tr>
+          </table>
+
+          <p>Пользователи, которые прошли опрос: </p>
+          <ol></ol>
+        </div> -->
+
+			 	<div id="myModal" class="modal">
+					<div class="modal-content">
+						<span class="close" onclick="hide();">&times;</span>
+						<table id="results">
+            <tr>
+              <td>Имя</td>
+              <td>Возраст</td>
+              <td>Пол</td>
+              <td>Дата заполнения</td>
+              <td>ОС</td>
+              <td>Объём памяти</td>
+              <td>Комментарии</td>
+              <td>Оценка сервиса</td>
+            </tr>
+          </table>
+
+          <p>Пользователи, которые прошли опрос: </p>
+          <ol></ol>
+					</div>
+				</div>
+
+        <!--<div class="modalWind">
+        	<table id="results">
+            <tr>
+              <td>Имя</td>
+              <td>Возраст</td>
+              <td>Пол</td>
+              <td>Дата заполнения</td>
+              <td>ОС</td>
+              <td>Объём памяти</td>
+              <td>Комментарии</td>
+              <td>Оценка сервиса</td>
+            </tr>
+          </table>
+        </div>-->
+
+				</form>
+			</div>
+
+
+
+		</article>
+
+		<nav class="buttons">
+			<!--<button class="butt1" onclick="hide();">Главная</button>-->
+			<button class="butt2" onclick="show();">Результаты</button>
+		</nav>
+
+		<aside>
+
+		</aside>
+
+	</div>
+
+	<footer>
+		<div>
+			<p>©Телефончики 2019</p>
+		</div>
+	</footer>
+
+</body>
+</html>
